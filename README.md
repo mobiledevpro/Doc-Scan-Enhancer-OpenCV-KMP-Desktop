@@ -18,9 +18,9 @@
 **Dmitri Chernysh**
 
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCMlOeo2u03BC28qXkpnA5Vw?style=for-the-badge&label=watch%20on%20youtube)](https://www.youtube.com/@mobiledevpro)
-[![Instagram](https://img.shields.io/badge/-instagram-E4405F?logo=instagram&message=Behind+the+scenes+in+Storiesn&style=for-the-badge&logoColor=white&label=follow+on)](https://www.instagram.com/mobiledevpro/)
+[![Instagram](https://img.shields.io/badge/-instagram-E4405F?logo=instagram&message=Behind+the+scenes+in+Storiesn&style=for-the-badge&logoColor=white&label=insights+on)](https://www.instagram.com/mobiledevpro/)
 [![Linkedin](https://img.shields.io/badge/-linkedin-0A66C2?logo=linkedin&style=for-the-badge&logoColor=white&label=read+on)](https://www.linkedin.com/in/dmitriychernysh/)
-[![Linkedin](https://img.shields.io/badge/-threads-000000?logo=linkedin&style=for-the-badge&logoColor=white&label=read+on)](https://www.linkedin.com/in/dmitriychernysh/)
+[![Threads](https://img.shields.io/badge/-threads-000000?logo=linkedin&style=for-the-badge&logoColor=white&label=read+on)](https://www.threads.net/@mobiledevpro)
 
 ## License:
 
