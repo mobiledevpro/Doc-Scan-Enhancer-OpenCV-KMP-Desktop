@@ -1,37 +1,43 @@
 package com.mobiledevpro.imageenhancer.desktop
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import org.jetbrains.compose.resources.painterResource
+import androidx.compose.ui.window.application
+import com.mobiledevpro.imageenhance.di.featureImageEnhanceModule
+import com.mobiledevpro.imageenhance.view.ImageEnhanceScreen
+import com.mobiledevpro.imageenhance.view.ImageEnhanceViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
-
-import image_enhancer_opencv_desktop_compose_ui.composeapp.generated.resources.Res
-import image_enhancer_opencv_desktop_compose_ui.composeapp.generated.resources.compose_multiplatform
+import org.koin.compose.*
+import org.koin.compose.scope.rememberKoinScope
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.context.loadKoinModules
+import org.koin.core.qualifier.TypeQualifier
+import org.koin.core.scope.Scope
+import org.koin.dsl.module
+import org.koin.ext.getFullName
+import org.koin.java.KoinJavaComponent
 
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                }
-            }
+    KoinApplication(application = {
+        modules(featureImageEnhanceModule)
+    }) {
+        val imageEnhanceViewModel: ImageEnhanceViewModel = koinViewModel()
+
+        AppTheme {
+            ImageEnhanceScreen(
+                uiState = imageEnhanceViewModel.uiState
+            )
         }
     }
 }
+
+/*
+inline fun <reified T> koinScope(): Scope {
+
+    val scopeId = T::class.getFullName() + "@" + T::class.hashCode()
+    val qualifier = TypeQualifier(T::class)
+
+    return KoinJavaComponent.getKoin().getOrCreateScope(scopeId, qualifier)
+}
+*/
